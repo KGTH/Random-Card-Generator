@@ -20,7 +20,7 @@ window.onload = function() {
   const signDown = document.querySelector(".down");
   signDown.innerHTML = sign;
 
-  if (sign === "♦" || sign === "♥") {
+  if (sign == "♦" || sign == "♥") {
     signUp.style.color = "red";
     signDown.style.color = "red";
     numbers.style.color = "red";
@@ -32,6 +32,16 @@ window.onload = function() {
     signUp.textContent = sign2;
     signDown.textContent = sign2;
     numbers.textContent = cartas();
+
+    if (sign2 == "♦" || sign2 == "♥") {
+      signUp.style.color = "red";
+      signDown.style.color = "red";
+      numbers.style.color = "red";
+    } else {
+      signUp.style.color = "black";
+      signDown.style.color = "black";
+      numbers.style.color = "black";
+    }
   });
 };
 
@@ -60,5 +70,5 @@ let pokerCards = () => {
   const signos = ["♦", "♥", "♠", "♣"];
   const aleatoriosignos = Math.floor(Math.random() * signos.length);
 
-  return `${signos[aleatoriosignos]} `;
+  return `${signos[aleatoriosignos]}`;
 };
